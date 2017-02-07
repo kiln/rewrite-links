@@ -1,0 +1,27 @@
+{
+  "name": "rewrite-links",
+  "version": "1.0.0",
+  "description": "Rewrite links in an HTML5 document",
+  "main": "src/index.js",
+  "bin": {
+    "rebase": "bin/rebase"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiln/rewrite-links.git"
+  },
+  "author": "Robin Houston",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/kiln/rewrite-links/issues"
+  },
+  "homepage": "https://github.com/kiln/rewrite-links#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "parse-srcset": "^1.0.2",
+    "parse5": "^3.0.1"
+  }
+}

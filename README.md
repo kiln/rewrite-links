@@ -1,0 +1,35 @@
+# rewrite-links
+
+Makes a reasonable attempt to rewrite all links in an HTML5 document,
+including those found in inline styles and stylesheets. It even parses
+`<img srcset>` attributes to find the links hidden in there.
+
+The actual rewriting is done by a user-supplied function.
+
+```js
+	function rewrite(url) {
+		// Return rewritten URL
+	}
+	const rewriter = new RewriteLinks(rewrite);
+
+	rewriter.rewrite(input_document)
+		.then((rewritten_document) => {
+			// Do something with the rewritten document
+		})
+		.catch((error) => console.error(error));
+```
+Note that `input_document` can be a string, a Buffer, or a Readable stream.
+
+## Example application
+The [`rebase`](bin/rebase) script is an example usage that rewrites
+relative URLs in a document to be relative to a different base. This
+could be useful as part of a large-scale website reorganisation, for
+example. (Traditionally one might have used `<base href>` in such a
+situation, but that breaks self-references like `#anchor` links and
+`<form action="">`.)
+
+## Limitations
+* Doesn’t attempt to parse stylesheets properly: just rewrites anything
+  that looks like a `url(…)` reference.
+* Obviously it can’t do anything about URLs that are constructed using
+  JavaScript code.
