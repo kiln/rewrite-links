@@ -7,6 +7,8 @@ including those found in inline styles and stylesheets. It even parses
 The actual rewriting is done by a user-supplied function.
 
 ```js
+const RewriteLinks = require("rewrite-links");
+
 function rewrite(url) {
 	// Return rewritten URL
 }
