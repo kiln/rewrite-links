@@ -4,9 +4,11 @@ const parseSrcset = require("parse-srcset");
 
 const Transform = require("./transform");
 
+// We only support attributes that are specified in HTML5,
+// so no <applet archive>, <object codebase>, etc.
+
 const URL_ATTRS = {
 	"a": new Set(["href"]),
-	"applet": new Set(["code", "codebase"]),
 	"area": new Set(["href"]),
 	"audio": new Set(["src"]),
 	"base": new Set(["href"]),
@@ -32,8 +34,6 @@ const URL_ATTRS = {
 };
 
 // Attributes that can contain a URL as part of a longer string
-// Here we only support attributes that are specified in HTML5,
-// so no <applet archive="…"> or whatever.
 const SPECIAL_URL_ATTRS = {
 	"meta": {
 		"content": convertMetaContentIfRefresh
