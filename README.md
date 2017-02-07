@@ -7,16 +7,16 @@ including those found in inline styles and stylesheets. It even parses
 The actual rewriting is done by a user-supplied function.
 
 ```js
-	function rewrite(url) {
-		// Return rewritten URL
-	}
-	const rewriter = new RewriteLinks(rewrite);
+function rewrite(url) {
+	// Return rewritten URL
+}
+const rewriter = new RewriteLinks(rewrite);
 
-	rewriter.rewrite(input_document)
-		.then((rewritten_document) => {
-			// Do something with the rewritten document
-		})
-		.catch((error) => console.error(error));
+rewriter.rewrite(input_document)
+	.then((rewritten_document) => {
+		// Do something with the rewritten document
+	})
+	.catch((error) => console.error(error));
 ```
 Note that `input_document` can be a string, a Buffer, or a Readable stream.
 
