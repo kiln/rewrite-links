@@ -35,3 +35,9 @@ situation, but that breaks self-references like `#anchor` links and
   that looks like a `url(…)` reference.
 * Obviously it can’t do anything about URLs that are constructed using
   JavaScript code.
+* Because it relies on parsing and serialising the HTML, it may change
+  formatting details that are meaningless to the HTML5 parser, such as
+  whitespace between the `<html>` and `<head>` tags.
+* In [*really* pathological cases](https://github.com/whatwg/html/issues/1280),
+  the semantics of (invalid) HTML can be changed simply by parsing and
+  serialising it.
