@@ -130,6 +130,10 @@ class RewriteLinks {
 		return this.transform.transform(source);
 	}
 
+	rewriteDocument(document) {
+		return this.transform.transformDocument(document);
+	}
+
 	transformLinks(link_transformer, element) {
 		// SVG elements use "href" consistently for links: glory be!
 		// These may be in the legacy XLink namespace, or simply not namespaced.

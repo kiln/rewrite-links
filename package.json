@@ -1,6 +1,6 @@
 {
   "name": "rewrite-links",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Rewrite links in an HTML5 document",
   "main": "src/index.js",
   "bin": {

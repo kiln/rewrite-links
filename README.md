@@ -22,6 +22,9 @@ rewriter.rewrite(input_document)
 ```
 Note that `input_document` can be a string, a Buffer, or a Readable stream.
 
+Alternatively you can use the `.rewriteDocument` method to rewrite
+an AST produced by [parse5](https://github.com/inikulin/parse5).
+
 ## Example application
 The [`rebase`](bin/rebase) script is an example usage that rewrites
 relative URLs in a document to be relative to a different base. This
